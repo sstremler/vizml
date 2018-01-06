@@ -7,4 +7,4 @@ Created on Thu Jan  4 01:18:28 2018
 """
 
 from .perceptron import Perceptron
-from .perceptron import KernelPerceptron
+from .kernel_perceptron import KernelPerceptron
