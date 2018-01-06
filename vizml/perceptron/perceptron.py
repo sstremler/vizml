@@ -43,7 +43,7 @@ class Perceptron:
     
     def score(self):
         y = self._predict(self.X)
-        unique, counts = np.unique(y * self.y, return_counts=True)
+        unique, counts = np.unique(-1 * y * self.y, return_counts=True)
         return(counts[0] / np.sum(counts))
         
     def _line_func(self, X, w):
