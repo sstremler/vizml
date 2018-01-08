@@ -7,5 +7,4 @@ Created on Thu Jan  4 01:18:28 2018
 """
 
 from .perceptron import Perceptron
-from .kernel_perceptron import KernelPerceptron
 from .voted_perceptron import VotedPerceptron

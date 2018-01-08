@@ -7,7 +7,7 @@ Created on Sun Jan  7 20:05:47 2018
 """
 
 import numpy as np
-from vizml.perceptron import VotedPerceptron
+from vizml.linear_model import VotedPerceptron
 
 np.random.seed(0)
 

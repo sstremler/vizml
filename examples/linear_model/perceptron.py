@@ -7,7 +7,7 @@ Created on Thu Jan  4 23:51:50 2018
 """
 
 import numpy as np
-from vizml.perceptron import Perceptron
+from vizml.linear_model import Perceptron
 
 np.random.seed(0)
 

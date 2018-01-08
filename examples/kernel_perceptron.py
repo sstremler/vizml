@@ -7,7 +7,7 @@ Created on Sat Jan  6 16:34:57 2018
 """
 
 import numpy as np
-from vizml.perceptron import KernelPerceptron
+from vizml.kernel_perceptron import KernelPerceptron
 
 np.random.seed(0)
 
