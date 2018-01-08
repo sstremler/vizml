@@ -8,10 +8,10 @@ Algorithms implemented by now:
 + VotedPerceptron [3]
 
 ### KernelPerceptron with Gaussian kernel
-<img src="https://github.com/strsz/vizml/blob/master/examples/perceptron/kernel_perceptron_gaussian.gif" width="396" height="360">
+<img src="https://github.com/strsz/vizml/blob/master/examples/kernel_perceptron_gaussian.gif" width="396" height="360">
 
 ### VotedPerceptron
-<img src="https://github.com/strsz/vizml/blob/master/examples/perceptron/voted_perceptron_test_1.gif" width="396" height="360">
+<img src="https://github.com/strsz/vizml/blob/master/examples/linear_model/voted_perceptron_test_1.gif" width="396" height="360">
 
 ## Bibliography
 [1] Rosenblatt, F. (1958). The perceptron: A probabilistic model for information storage and organization in the brain. *Psychological review*, 65(6), 386.
