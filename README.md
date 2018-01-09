@@ -14,6 +14,9 @@ Algorithms implemented by now:
 ### VotedPerceptron
 <img src="https://github.com/strsz/vizml/blob/master/examples/linear_model/voted_perceptron_test_1.gif" width="396" height="360">
 
+### LinearRegression trajectory
+<img src="https://github.com/strsz/vizml/blob/master/examples/linear_model/linear_regression_trajectory.gif" width="396" height="360">
+
 ## Bibliography
 [1] Rosenblatt, F. (1958). The perceptron: A probabilistic model for information storage and organization in the brain. *Psychological review*, 65(6), 386.
 
