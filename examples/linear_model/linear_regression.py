@@ -19,8 +19,11 @@ y = r*X + np.random.normal(loc=0, scale=np.sqrt(1-r**2), size=(N,1))
 y = y.ravel()
 print(np.corrcoef(X.T,y))
 
-clf = LinearRegression(eta=0.001, maxit=100)
+clf = LinearRegression(eta=0.01, maxit=15)
 w = clf.fit(X, y)
 
-anim = clf.plot_animation(interval=50, notebook=False, xinch=5.5, yinch=5)
+anim = clf.plot_animation(interval=400, notebook=False, xinch=5.5, yinch=5)
 print(anim)
+
+anim_traj = clf.plot_trajectory(interval=400, notebook=False, xinch=5.5, yinch=5)
+print(anim_traj)
