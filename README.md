@@ -6,6 +6,7 @@ Algorithms implemented by now:
 + Perceptron [1]
 + KernelPerceptron [2]
 + VotedPerceptron [3]
++ LinearRegression [4]
 
 ### KernelPerceptron with Gaussian kernel
 <img src="https://github.com/strsz/vizml/blob/master/examples/kernel_perceptron_gaussian.gif" width="396" height="360">
@@ -19,3 +20,5 @@ Algorithms implemented by now:
 [2] Bordes, A., Ertekin, S., Weston, J., & Bottou, L. (2005). Fast kernel classifiers with online and active learning. *Journal of Machine Learning Research*, 6(Sep), 1579-1619.
 
 [3] Freund, Y., & Schapire, R. E. (1999). Large margin classification using the perceptron algorithm. *Machine learning*, 37(3), 277-296.
+
+[4] Ng, A. (2000). CS229 Lecture notes. *CS229 Lecture notes, 1*(1), 1-30.
