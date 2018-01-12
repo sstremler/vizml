@@ -10,3 +10,5 @@ from .perceptron import Perceptron
 from .voted_perceptron import VotedPerceptron
 from .linear_regression import LinearRegression
 from .logistic_regression import LogisticRegression
+from .ridge_regression import RidgeRegression
+
