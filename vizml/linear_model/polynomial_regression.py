@@ -11,17 +11,17 @@ from matplotlib import pyplot as plt
 from matplotlib import animation
 from ..preprocessing import PolynomialFeatures, StandardScaler
 
-class RidgeRegression:
-    """RidgeRegression"""
-    def __init__(self, eta=0.01, maxit=5, alpha=0.5, scale=True, degree=2):
+class PolynomialRegression:
+    """PolynomialRegression"""
+    def __init__(self, eta=0.01, maxit=5, alpha=0.5, degree=2):
         self.eta = eta
         self.maxit = maxit
         self.alpha = alpha
-        self.scale = scale
         self.degree = degree
     
     def fit(self, X, y):
         self.X = X.astype(np.float64)
+        self.X_original = self.X
         self.poly = PolynomialFeatures(degree=self.degree)
         self.poly, self.X = self.poly.fit_transform(self.X)
         self.scaler = StandardScaler()
@@ -31,7 +31,7 @@ class RidgeRegression:
         self.y = y
 #        print(self.X)
         for i in range(self.maxit):
-            self.weight += self.eta * (np.matmul(self.y - np.matmul(self.X, self.weight), self.X) + self.alpha * self.weight)
+            self.weight += self.eta * (np.matmul(self.y - np.matmul(self.X, self.weight), self.X))
             self.weight_steps = np.row_stack((self.weight_steps, self.weight))
             
         return self.weight
@@ -60,11 +60,11 @@ class RidgeRegression:
         return self.line,
 
     def _animate(self, i):
-        xlim = (np.min(self.X[:,1]), np.max(self.X[:,1]))
+        xlim = (np.min(self.X_original[:,0]), np.max(self.X_original[:,0]))
         xlin = np.linspace(xlim[0], xlim[1], 100).reshape(100,1)
         
-        lineX = self.poly.transform(xlin)        
-#        lineX[:,1:] = self.scaler.transform(lineX[:,1:])
+        lineX = self.poly.transform(xlin)
+        lineX[:,1:] = self.scaler.transform(lineX[:,1:])
         
         lineY = self._predict(lineX, self.weight_steps[i,:])
         self.line.set_data(lineX[:,1], lineY)
