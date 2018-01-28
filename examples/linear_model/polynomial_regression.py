@@ -15,7 +15,7 @@ X = np.linspace(-4, 2.5, 100).reshape(100,1)
 y = X**3/4 + 3*X**2/4 - 3*X/2 + np.random.normal(loc=0, scale=0.2, size=(100,1))
 y = y.ravel()
 
-clf = PolynomialRegression(eta=0.001, maxit=500, alpha=0, scale=True, degree=3)
+clf = PolynomialRegression(eta=0.001, maxit=500, alpha=0, degree=3)
 w = clf.fit(X, y)
 print(clf.weight_steps)
 

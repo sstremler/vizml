@@ -29,7 +29,7 @@ class PolynomialRegression:
         self.weight = np.zeros(self.X.shape[1])
         self.weight_steps = np.array([self.weight])
         self.y = y
-#        print(self.X)
+
         for i in range(self.maxit):
             self.weight += self.eta * (np.matmul(self.y - np.matmul(self.X, self.weight), self.X))
             self.weight_steps = np.row_stack((self.weight_steps, self.weight))
