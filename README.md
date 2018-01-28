@@ -20,7 +20,7 @@ Algorithms implemented by now:
 <img src="https://github.com/strsz/vizml/blob/master/examples/linear_model/linear_regression_trajectory.gif" width="396" height="360">
 
 ### PolynomialRegression
-<img src="https://github.com/strsz/vizml/blob/master/examples/linear_modelpolynomial_regression.gif" width="396" height="360">
+<img src="https://github.com/strsz/vizml/blob/master/examples/linear_model/polynomial_regression.gif" width="396" height="360">
 
 ## Bibliography
 [1] Rosenblatt, F. (1958). The perceptron: A probabilistic model for information storage and organization in the brain. *Psychological review*, 65(6), 386.
