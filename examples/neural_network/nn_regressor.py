@@ -11,16 +11,11 @@ from vizml.neural_network import NNRegressor
 
 np.random.seed(0)
 
-N = 200
-X = np.random.normal(loc=0, scale=1, size=(N,2))
+X = np.linspace(-4, 2.5, 100).reshape(100,1)
+y = X**3/4 + 3*X**2/4 - 3*X/2 + np.random.normal(loc=0, scale=0.2, size=(100,1))
+y = y.ravel()
 
-# generate classes
-# let the class be -1 under the mirror of the hyperbolic cosine function
-# and +1 above
-y = np.where(X[:,1] <= -1 * np.cosh(X[:,0]) + 1.5, -1, 1)
-X[y == 1,1] += 0.5
-
-clf = NNRegressor(eta=0.001, layers=2, epoch=100)
+clf = NNRegressor(eta=0.001, layers=3, epoch=1)
 clf.fit(X, y)
 
 #anim = clf.plot_animation(interval=500, notebook=False, smoothness=400)
