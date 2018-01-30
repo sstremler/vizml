@@ -70,7 +70,7 @@ class NNRegressor:
 #                print(1)
 #                print(len(self.layers))
                 for j in reversed(range(len(self.layers) - 2)):
-                    print(j)
+#                    print(j)
                     delta_h = self._transfer_f_derivative(layer_sum[j]) * \
                                 np.matmul(delta_output, w[j + 1][1:,:].T)
                     grad_w_h = np.matmul(delta_h.T, layer_output[j][1:])
@@ -79,14 +79,27 @@ class NNRegressor:
                     delta_output = delta_h
                 # hl end
                 # end backpropagation
-                print(w_temp)
-                print("\n")
+#                print(w_temp)
+#                print("\n")
                 w = w_temp
                 
             self.weight_steps.append(w)
             
         return w
-                
+    
+    def predict(self, X):
+        return self._predict(X, self.weight_steps[-1])
+    
+    def _predict(self, X, w):
+        X = np.column_stack((np.ones(X.shape[0]), X))
+        hidden_layer_no = len(self.layers) - 2
+        
+        for i in range(hidden_layer_no):
+            hidden_layer_output = self._transfer_f(np.matmul(X, w[i]))
+            hidden_layer_output = np.column_stack((np.ones(hidden_layer_output.shape[0]), 
+                                                   hidden_layer_output))
+        
+        return np.matmul(hidden_layer_output, w[hidden_layer_no])
         
     def _initialize_weights(self, layers):
         w = []
@@ -97,6 +110,7 @@ class NNRegressor:
             
             w.append(np.random.uniform(low=-np.sqrt(6/n_no), high=np.sqrt(6/n_no), 
                               size=(layers[i] + 1, layers[i + 1])))
+#            w.append(np.ones((layers[i] + 1, layers[i + 1])))
             
         return w
     
